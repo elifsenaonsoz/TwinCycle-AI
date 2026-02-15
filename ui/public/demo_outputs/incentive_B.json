@@ -1,0 +1,59 @@
+{
+  "request_id": "req_f12fcec6_INC",
+  "model_version": "mvp-contract-v1.0.0",
+  "selected_option_id": "tradein_new",
+  "packages": [
+    {
+      "package_id": "cash",
+      "title": "Nakit Takas Paketi",
+      "description": "Anlık nakit indirim ile ilk maliyeti hızlı düşürür.",
+      "value": {
+        "cash_amount_try": 14817,
+        "carbon_points": null,
+        "perk": "extra_data"
+      },
+      "ui": {
+        "badge": "Nakit avantaj",
+        "cta_label": "Nakit paketi seç"
+      }
+    },
+    {
+      "package_id": "carbon_points",
+      "title": "Karbon Puan Paketi",
+      "description": "Sürdürülebilirlik katkısını yüksek karbon puanı ile ödüllendirir.",
+      "value": {
+        "cash_amount_try": null,
+        "carbon_points": 8811,
+        "perk": "donation"
+      },
+      "ui": {
+        "badge": "Karbon etkisi",
+        "cta_label": "Karbon puanı seç"
+      }
+    },
+    {
+      "package_id": "hybrid",
+      "title": "Hibrit Denge Paketi",
+      "description": "Nakit ve karbon puanını dengeli biçimde birleştirir.",
+      "value": {
+        "cash_amount_try": 10932,
+        "carbon_points": 8714,
+        "perk": "none"
+      },
+      "ui": {
+        "badge": "Dengeli teklif",
+        "cta_label": "Hibrit paketi seç"
+      }
+    }
+  ],
+  "accept_score": 0.94,
+  "impact_score": 0.69,
+  "notes": [
+    "Yüksek kullanım sinyalleri nedeniyle nakit/hibrit seçenekleri kısa vadeli maliyet baskısını azaltır.",
+    "Bütçe önceliği yüksek olduğu için nakit paketinin kabul olasılığı yükselmiştir."
+  ],
+  "disclaimer": {
+    "type": "advisory",
+    "text": "Teşvik değerleri kanal ve kampanya koşullarına göre işlem anında güncellenebilir."
+  }
+}

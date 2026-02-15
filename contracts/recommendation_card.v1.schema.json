@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RecommendationCardV1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "option_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["repair", "refurb", "trade_in", "keep", "upgrade"]
+    },
+    "why_this": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cost_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sustainability_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "performance_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "overall_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "cost_score",
+        "sustainability_score",
+        "performance_score",
+        "overall_score"
+      ]
+    },
+    "estimated_impacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rul_gain_months_min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rul_gain_months_max": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "co2_impact_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ewaste_reduction_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "rul_gain_months_min",
+        "rul_gain_months_max",
+        "co2_impact_score",
+        "ewaste_reduction_score"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "type": "string"
+      }
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cta_label": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string",
+          "enum": [
+            "Top choice",
+            "Balanced",
+            "Max performance",
+            "Lowest cost",
+            "Lowest CO\u2082"
+          ]
+        },
+        "icon": {
+          "type": "string"
+        }
+      },
+      "required": ["cta_label", "badge", "icon"]
+    },
+    "triggers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "open_incentive_flow": {
+          "type": "boolean"
+        }
+      },
+      "required": ["open_incentive_flow"]
+    }
+  },
+  "required": [
+    "option_id",
+    "title",
+    "tagline",
+    "category",
+    "why_this",
+    "scores",
+    "estimated_impacts",
+    "assumptions",
+    "next_steps",
+    "ui",
+    "triggers"
+  ]
+}

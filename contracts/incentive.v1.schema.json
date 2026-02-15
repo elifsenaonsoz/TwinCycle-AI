@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IncentiveResponseV1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "selected_option_id": {
+      "type": "string"
+    },
+    "packages": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "package_id": {
+            "type": "string",
+            "enum": ["cash", "carbon_points", "hybrid"]
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "value": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "cash_amount_try": {
+                "type": ["integer", "null"]
+              },
+              "carbon_points": {
+                "type": ["integer", "null"]
+              },
+              "perk": {
+                "type": "string",
+                "enum": ["donation", "tree", "extra_data", "none"]
+              }
+            },
+            "required": ["cash_amount_try", "carbon_points", "perk"]
+          },
+          "ui": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "badge": {
+                "type": "string"
+              },
+              "cta_label": {
+                "type": "string"
+              }
+            },
+            "required": ["badge", "cta_label"]
+          }
+        },
+        "required": ["package_id", "title", "description", "value", "ui"]
+      }
+    },
+    "accept_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "impact_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "notes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "disclaimer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "text"]
+    }
+  },
+  "required": [
+    "request_id",
+    "model_version",
+    "selected_option_id",
+    "packages",
+    "accept_score",
+    "impact_score",
+    "notes",
+    "disclaimer"
+  ]
+}

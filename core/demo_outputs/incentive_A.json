@@ -1,0 +1,59 @@
+{
+  "request_id": "req_2b534610_INC",
+  "model_version": "mvp-contract-v1.0.0",
+  "selected_option_id": "tradein_new",
+  "packages": [
+    {
+      "package_id": "cash",
+      "title": "Nakit Takas Paketi",
+      "description": "Anlık nakit indirim ile ilk maliyeti hızlı düşürür.",
+      "value": {
+        "cash_amount_try": 9373,
+        "carbon_points": null,
+        "perk": "none"
+      },
+      "ui": {
+        "badge": "Nakit avantaj",
+        "cta_label": "Nakit paketi seç"
+      }
+    },
+    {
+      "package_id": "carbon_points",
+      "title": "Karbon Puan Paketi",
+      "description": "Sürdürülebilirlik katkısını yüksek karbon puanı ile ödüllendirir.",
+      "value": {
+        "cash_amount_try": null,
+        "carbon_points": 18060,
+        "perk": "tree"
+      },
+      "ui": {
+        "badge": "Karbon etkisi",
+        "cta_label": "Karbon puanı seç"
+      }
+    },
+    {
+      "package_id": "hybrid",
+      "title": "Hibrit Denge Paketi",
+      "description": "Nakit ve karbon puanını dengeli biçimde birleştirir.",
+      "value": {
+        "cash_amount_try": 10007,
+        "carbon_points": 10169,
+        "perk": "donation"
+      },
+      "ui": {
+        "badge": "Dengeli teklif",
+        "cta_label": "Hibrit paketi seç"
+      }
+    }
+  ],
+  "accept_score": 0.7,
+  "impact_score": 0.93,
+  "notes": [
+    "Veri silme süreci sertifikalı yürütülür ve teslimde silme sertifikası sağlanır.",
+    "Karbon puanı paketi bu profilde çevresel etki skorunu güçlendirir."
+  ],
+  "disclaimer": {
+    "type": "advisory",
+    "text": "Teşvik değerleri kanal ve kampanya koşullarına göre işlem anında güncellenebilir."
+  }
+}
