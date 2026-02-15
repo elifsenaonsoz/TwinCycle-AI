@@ -1,125 +1,73 @@
 {
-  "scenario": "sustainability_priority_high",
+  "request_id": "req_ui_fix_scenario_1",
+  "model_version": "mvp-contract-v1.0.0",
   "inputs_echo": {
     "device": {
-      "brand": "Apple",
-      "model": "iPhone 13",
-      "age_months": 24
+      "brand": "Samsung",
+      "model": "Galaxy S22",
+      "age_months": 18
     },
     "signals": {
-      "battery_health_percent": 82,
-      "charge_cycles": 520
+      "battery_health_percent": 72,
+      "charge_cycles": 520,
+      "frame_drop_rate": 0.12,
+      "repair_history_count": 0
     },
-    "preferences": {
-      "performance_priority": "medium",
+    "user_preferences": {
+      "budget_priority": "medium",
       "sustainability_priority": "high",
-      "budget_sensitivity": "medium",
-      "data_privacy_concern": "high"
+      "performance_priority": "medium",
+      "prefers_financing": false
     }
-  },
-  "rul_estimate": {
-    "rul_months_min": 12,
-    "rul_months_max": 16,
-    "confidence": "high"
-  },
-  "decision_summary": {
-    "recommended_primary_option_id": "repair_battery",
-    "rationale": "Sürdürülebilirlik önceliği yüksek olduğu için cihazı elde tutmak ve batarya değişimiyle kullanım ömrünü uzatmak en dengeli yol. Veri silme kaygısını azaltmak için devretme/veri silme adımları minimize edilir.",
-    "pareto_note": "Onarım: en düşük maliyet ve en yüksek sürdürülebilirlik; Refurb: dengeli; Yeni: en yüksek performans ama daha yüksek çevresel maliyet."
   },
   "recommendations": [
     {
       "option_id": "repair_battery",
       "title": "Batarya Değişimi",
-      "tag": "En Düşük CO₂",
       "scores": {
-        "overall_score": 80,
-        "cost": 88,
-        "sustainability": 90,
-        "performance": 59
+        "cost_score": 0.88,
+        "sustainability_score": 0.90,
+        "performance_score": 0.59,
+        "overall_score": 0.80
       },
-      "highlights": [
-        "Düşük maliyetle hızlı iyileştirme",
-        "Cihazı elde tutarak e-atık etkisini azaltır",
-        "Servis süresi kısa olduğu için kesinti riski sınırlıdır"
-      ],
       "estimated_impacts": {
-        "rul_gain_months_range": "12–16 ay",
-        "co2_score_percent": 87,
-        "e_waste_reduction_percent": 90
-      },
-      "why_this": [
-        "Başlangıç maliyeti en düşük seçenektir.",
-        "Cihazı elde tutarak e-atık etkisini azaltır.",
-        "Servis süresi kısa olduğu için geçiş maliyeti düşüktür."
-      },
-      "next_steps": [
-        "Servis randevusu oluştur.",
-        "Veri yedeğini al.",
-        "Parça ve işçilik ücretini onayla.",
-        "Değişim sonrası sağlık raporunu doğrula."
-      ]
+        "rul_gain_months_min": 12,
+        "rul_gain_months_max": 16,
+        "co2_impact_score": 0.87,
+        "ewaste_reduction_score": 0.90
+      }
     },
     {
       "option_id": "refurb_buy",
       "title": "Refurbished Cihaz Al",
-      "tag": "Dengeli",
       "scores": {
-        "overall_score": 77,
-        "cost": 70,
-        "sustainability": 77,
-        "performance": 84
+        "cost_score": 0.70,
+        "sustainability_score": 0.77,
+        "performance_score": 0.84,
+        "overall_score": 0.77
       },
-      "highlights": [
-        "Dengeli maliyet ve performans",
-        "Yenilenmiş ürün tercihi çevresel etkiyi dengeler",
-        "Orta-uzun vadede stabil kullanım ömrü sağlar"
-      ],
       "estimated_impacts": {
-        "rul_gain_months_range": "17–23 ay",
-        "co2_score_percent": 79,
-        "e_waste_reduction_percent": 74
-      },
-      "why_this": [
-        "Yeni cihaza göre daha düşük toplam maliyetle güncel performans sunar.",
-        "Yenilenmiş ürün tercihi çevresel etkiyi dengeler."
-      ],
-      "next_steps": [
-        "Uygun model ve kapasiteyi seç.",
-        "Garanti ve iade koşullarını doğrula.",
-        "Eski cihazdan veri transfer planını oluştur."
-      ]
+        "rul_gain_months_min": 17,
+        "rul_gain_months_max": 23,
+        "co2_impact_score": 0.79,
+        "ewaste_reduction_score": 0.74
+      }
     },
     {
       "option_id": "tradein_new",
       "title": "Eskiyi Ver, Yeniye Geç",
-      "tag": "En Yüksek Performans",
       "scores": {
-        "overall_score": 64,
-        "cost": 47,
-        "sustainability": 56,
-        "performance": 94
+        "cost_score": 0.47,
+        "sustainability_score": 0.56,
+        "performance_score": 0.94,
+        "overall_score": 0.64
       },
-      "highlights": [
-        "Donanım sıçramasıyla en yüksek performans seviyesini sağlar",
-        "Yoğun kullanımda en uzun RUL kazancını üretir",
-        "Trade-in ve finansman seçenekleri başlangıç maliyetini dengeleyebilir"
-      ],
       "estimated_impacts": {
-        "rul_gain_months_range": "28–37 ay",
-        "co2_score_percent": 47,
-        "e_waste_reduction_percent": 41
-      },
-      "why_this": [
-        "Donanım sıçramasıyla en yüksek performans seviyesini sağlar.",
-        "Trade-in ve finansman seçenekleri başlangıç maliyetini dengeleyebilir."
-      ],
-      "next_steps": [
-        "Trade-in değerini hesapla.",
-        "Teşvik ve finansman seçeneklerini karşılaştır.",
-        "Sipariş ve teslimat planını onayla."
-      ]
+        "rul_gain_months_min": 28,
+        "rul_gain_months_max": 37,
+        "co2_impact_score": 0.47,
+        "ewaste_reduction_score": 0.41
+      }
     }
-  ],
-  "generated_at": "2026-02-15T20:22:00Z"
+  ]
 }
