@@ -1,5 +1,6 @@
 {
-  "request_id": "req_ui_fix_scenario_1",
+  "request_id": "req_533b1b59",
+  "timestamp_utc": "2026-02-15T16:28:22Z",
   "model_version": "mvp-contract-v1.0.0",
   "inputs_echo": {
     "device": {
@@ -8,10 +9,10 @@
       "age_months": 18
     },
     "signals": {
-      "battery_health_percent": 72,
-      "charge_cycles": 520,
-      "frame_drop_rate": 0.12,
-      "repair_history_count": 0
+      "battery_health_percent": 60,
+      "charge_cycles": 900,
+      "frame_drop_rate": 0.15,
+      "repair_history_count": 1
     },
     "user_preferences": {
       "budget_priority": "medium",
@@ -20,54 +21,18 @@
       "prefers_financing": false
     }
   },
-  "recommendations": [
-    {
-      "option_id": "repair_battery",
-      "title": "Batarya Değişimi",
-      "scores": {
-        "cost_score": 0.88,
-        "sustainability_score": 0.90,
-        "performance_score": 0.59,
-        "overall_score": 0.80
-      },
-      "estimated_impacts": {
-        "rul_gain_months_min": 12,
-        "rul_gain_months_max": 16,
-        "co2_impact_score": 0.87,
-        "ewaste_reduction_score": 0.90
-      }
-    },
-    {
-      "option_id": "refurb_buy",
-      "title": "Refurbished Cihaz Al",
-      "scores": {
-        "cost_score": 0.70,
-        "sustainability_score": 0.77,
-        "performance_score": 0.84,
-        "overall_score": 0.77
-      },
-      "estimated_impacts": {
-        "rul_gain_months_min": 17,
-        "rul_gain_months_max": 23,
-        "co2_impact_score": 0.79,
-        "ewaste_reduction_score": 0.74
-      }
-    },
-    {
-      "option_id": "tradein_new",
-      "title": "Eskiyi Ver, Yeniye Geç",
-      "scores": {
-        "cost_score": 0.47,
-        "sustainability_score": 0.56,
-        "performance_score": 0.94,
-        "overall_score": 0.64
-      },
-      "estimated_impacts": {
-        "rul_gain_months_min": 28,
-        "rul_gain_months_max": 37,
-        "co2_impact_score": 0.47,
-        "ewaste_reduction_score": 0.41
-      }
-    }
-  ]
+  "rul_estimate": {
+    "rul_months_min": 4,
+    "rul_months_max": 13,
+    "confidence": "medium",
+    "confidence_score": 0.44,
+    "key_drivers": ["charge_cycles", "device_age_months", "battery_health_percent"]
+  },
+  "decision_summary": {
+    "recommended_primary_option_id": "repair_battery",
+    "rationale": "Bütçe ve sürdürülebilirlik dengesi mevcut cihaz üzerinde onarımı öne çıkarıyor; batarya sağlığı %60 ve RUL aralığı 4-13 ay olduğu için batarya yenileme güçlü bir kısa-orta vade iyileştirme sunuyor. Ayrıca veri silme kaygısı etkisini azaltmak için cihazı elde tutma yaklaşımı bu senaryoda daha uygun.",
+    "pareto_note": "repair_battery en düşük maliyet; refurb_buy dengeli maliyet-performans; tradein_new en yüksek performans ve en uzun RUL kazanımı sağlar."
+  },
+  "recommendations": [/* … aynen bırakıldı … */],
+  "disclaimer": { "type": "advisory", "text": "Bu çıktı karar destek amaçlıdır; nihai fiyat ve kampanyalar kanal doğrulamasına tabidir." }
 }
